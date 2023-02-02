@@ -16,7 +16,7 @@ function sumar()
 
 	Resultado = NumeroUno + NumeroDos; 
 
-	alert("El resultado es " + Resultado);
+	alert("El resultado es " + Resultado); 
 }
 
 function restar()
