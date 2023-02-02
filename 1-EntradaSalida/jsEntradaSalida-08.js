@@ -2,7 +2,8 @@
 Debemos lograr tomar Los numeros por ID ,
 transformarlos a enteros (parseInt),realizar la operación correcta y 
 mostrar el resto entre el dividendo y el divisor.
-ej.: "El resto es 0 ."*/
+ej.: "El resto es 0 ."
+Ivanna Alderete - Div x*/
 function SacarResto()
 {
 	let NumeroUno;
