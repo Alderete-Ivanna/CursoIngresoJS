@@ -1,4 +1,5 @@
-/* Al presionar el Botón, mostrar un número Random del 1 al 10 inclusive */
+/* Al presionar el Botón, mostrar un número Random del 1 al 10 inclusive
+ Ivanna Alderete - Div x */
 function mostrar()
 {
 	let numero;
