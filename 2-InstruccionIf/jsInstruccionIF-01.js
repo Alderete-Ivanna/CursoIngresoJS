@@ -1,3 +1,5 @@
+/* Al ingresar una edad que sea igual a 15, mostrar el mensaje "niña bonita".
+Ivanna Alderete - Div x */
 function mostrar()
 {
 	let edad; 
@@ -8,6 +10,4 @@ function mostrar()
 		alert("niña bonita"); 
 	}
 
-	alert("Fin de la función"); 
-	
 }

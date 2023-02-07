@@ -1,3 +1,5 @@
+/* Al ingresar una edad debemos informar solo si la persona es mayor de edad. 
+ Ivanna Alderete - Div x*/
 function mostrar()
 {
 	let edad; 
@@ -9,4 +11,4 @@ function mostrar()
 	}
 
 	
-}//FIN DE LA FUNCIÓN
+}
