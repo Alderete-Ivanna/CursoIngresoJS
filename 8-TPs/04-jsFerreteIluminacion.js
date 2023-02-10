@@ -1,14 +1,70 @@
-/*4.	Para el departamento de iluminación:
-Tomando en cuenta que todas las lámparas están en oferta al mismo precio de $35 pesos final.
-A.	Si compra 6 o más  lamparitas bajo consumo tiene un descuento del 50%. 
-B.	Si compra 5  lamparitas bajo consumo marca "ArgentinaLuz" se hace un descuento del 40 % y si es de otra marca el descuento es del 30%.
-C.	Si compra 4  lamparitas bajo consumo marca "ArgentinaLuz" o “FelipeLamparas” se hace un descuento del 25 % y si es de otra marca el descuento es del 20%.
-D.	Si compra 3  lamparitas bajo consumo marca "ArgentinaLuz"  el descuento es del 15%, si es  “FelipeLamparas” se hace un descuento del 10 % y si es de otra marca un 5%.
-E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de ingresos brutos en informar del impuesto con el siguiente mensaje:
- ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
-
- */
+ //Ivanna Alderete - Div x//
 function CalcularPrecio () 
 {
- 	
+    let Cantidad;
+    const VALOR_UNIDAD = 35;
+    let PrecioFinal;
+    let Marca;
+    let Descuento;
+    let IIBB;
+
+    Marca = document.getElementById("Marca").value;
+
+    Cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+
+if ( Cantidad >= 6){
+
+        Descuento = (VALOR_UNIDAD * Cantidad) * 50 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }
+    
+else if ( Cantidad == 5){
+
+     if ( Marca == "ArgentinaLuz" ){
+
+        Descuento = (VALOR_UNIDAD * Cantidad) * 40 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }
+     if(Marca != "ArgentinaLuz"){
+    
+        Descuento = (VALOR_UNIDAD * Cantidad) * 30 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }
+}
+else if ( Cantidad == 4 ){
+
+     if( Marca == "ArgentinaLuz" || Marca == "FelipeLamparas" ){
+        Descuento = (VALOR_UNIDAD * Cantidad) * 25 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }
+
+     if ( !(Marca == "ArgentinaLuz" || Marca == "FelipeLamparas")){
+
+            Descuento = (VALOR_UNIDAD * Cantidad) * 20 / 100;
+            PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }
+}
+else if ( Cantidad == 3){
+     if ( Marca == "ArgentinaLuz" ){
+
+        Descuento = (VALOR_UNIDAD * Cantidad) * 15 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;  
+    }
+    else if (Marca == "FelipeLamparas"){
+        Descuento = (VALOR_UNIDAD * Cantidad) * 10 / 100;
+        PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;
+    }               
+     
+     else {
+                Descuento = (VALOR_UNIDAD * Cantidad) * 5 / 100;
+                PrecioFinal = (VALOR_UNIDAD * Cantidad) - Descuento;  
+    }
+}
+if( PrecioFinal > 120){
+    IIBB = PrecioFinal * 10 / 100;
+    PrecioFinal = PrecioFinal + IIBB
+    alert("Usted pago $" + IIBB + " de IIBB"); 
+}
+    document.getElementById("txtIdprecioDescuento").value = PrecioFinal;
+
 }
