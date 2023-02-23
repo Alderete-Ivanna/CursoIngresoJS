@@ -1,8 +1,13 @@
-/*
-al presionar el botón pedir la CLAVE (ayuda: es utn750)*/
+/* al presionar el botón pedir la CLAVE (ayuda: es utn750)
+ Ivanna Alderete - Div x */
 function mostrar()
 {
-	var claveIngresada;
-	claveIngresada = prompt("ingrese el número clave.");
-	
-}//FIN DE LA FUNCIÓN
+	let pasword; 
+	pasword = prompt("Ingrese la clave");
+
+	while (pasword != "utn750"){
+		alert("Pasword incorrecto");
+		pasword = prompt("Ingrese la clave");
+	}	
+	alert("clave correcta"); 
+}

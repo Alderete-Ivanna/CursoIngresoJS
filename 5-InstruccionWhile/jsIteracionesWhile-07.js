@@ -1,18 +1,21 @@
-/*
-Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
+/* Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
 e informar la suma acumulada y el promedio.
-*/
+ Ivanna Alderete - Div x */
 function mostrar()
 {
-	var contador;
-	var acumulador;
-	var respuesta;
-	contador=0;
-	acumulador=0;
-	respuesta='si';
+	let acumulador = 0;
+	let numero; 
+	let respuesta = 'si';
+	let i = 0;
 
+	while (respuesta == 'si'){
 
-	txtIdSuma.value=acumulador;
-	txtIdPromedio.value=acumulador/contador;
+		numero = parseInt(prompt("Ingrese un numero: "));
+		acumulador = acumulador + numero;
+		i = i + 1; 
+		respuesta = prompt("Quiere ingresar otro numero? escriba si/no");
+	}
 
-}//FIN DE LA FUNCIÓN
+	document.getElementById("txtIdSuma").value = acumulador;
+	document.getElementById("txtIdPromedio").value = (acumulador / i).toFixed(1);
+}

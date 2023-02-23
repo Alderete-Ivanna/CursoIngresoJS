@@ -1,21 +1,34 @@
-/*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
+/* Al presionar el botón pedir  números  hasta que el usuario quiera,
+mostrar el número máximo y el número mínimo ingresado.
+ Ivanna Alderete - Div x */
 function mostrar()
-{	// declarar variables
-	var banderaDelPrimero;
-	var numeroIngresado;
-	var numeroMaximo;
-	var numeroMinimo;
-	var respuesta;
-	//iniciar variables
-	banderaDelPrimero="es el primero";
-	respuesta='si';
-	while(respuesta=="si")
+{	
+	let numero;
+	let maximo;
+	let minimo;
+	let flag = 0;
+	let respuesta ='Si'; 
+	
+	while(respuesta == 'Si')
 	{
-		
-		respuesta=prompt("desea continuar?");
+		numero = parseInt(prompt("Ingrese un numero: "));
+
+		if(flag == 0){
+			maximo = numero;
+			minimo = numero;
+			flag = 1;
+		}
+		if(numero < minimo){
+			minimo = numero;
+		}
+
+		else if(numero > maximo){
+			maximo = numero
+		}
+
+		respuesta = prompt("desea continuar? ponga Si/No");
 	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
-}//FIN DE LA FUNCIÓN
+
+	document.getElementById("txtIdMaximo").value = maximo;
+	document.getElementById("txtIdMinimo").value = minimo;
+}

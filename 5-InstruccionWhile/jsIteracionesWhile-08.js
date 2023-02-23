@@ -1,19 +1,33 @@
-/*
-Al presionar el botón pedir  números  hasta que el usuario quiera,
-sumar los que son positivos y multiplicar los negativos.*/
+/* Al presionar el botón pedir  números  hasta que el usuario quiera,
+sumar los que son positivos y multiplicar los negativos.
+ Ivanna Alderete - Div x*/
 function mostrar()
 {
-	var contador;
-	var respuesta;
-	var sumaPositivos;
-	var multiplicacionNegativos;
-	contador=0;
-	sumaPositivos=0;
-	multiplicacionNegativos=1;
-	respuesta='si';
+	let numero;
+	let positivos = 0;
+	let negativos = 1;
+	let respuesta = 'si';
+	let contadorNegativos = 0;
 
+	while (respuesta == 'si')
+	{
+		numero = parseInt(prompt("Ingrese un numero: "));
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+		if (numero >= 0){
+			positivos = positivos + numero;
+		}
+		else {
+			contadorNegativos = contadorNegativos + 1;
+			negativos = negativos * numero; 
+		}
+		respuesta = prompt("Quiere ingresar otro numero? escriba si/no");
+	}
 
-}//FIN DE LA FUNCIÓN
+	if(contadorNegativos == 0){
+		negativos = 0;
+	}
+
+	document.getElementById("txtIdSuma").value = positivos; 
+	document.getElementById("txtIdProducto").value = negativos;
+
+} 
