@@ -51,6 +51,6 @@ function mostrar()
 	document.write("La cantidad de ceros es " + contadorCeros + "<br>");
 	document.write("Cantidad de pares = " + contadorPares + "<br>");
 	document.write("Promedio de positivos = " + promedioPositivos.toFixed(1) + "<br>");
-	document.write("Pormedio de negativos = " + promedioNegativos.toFixed(2) + "<br>");
+	document.write("Pormedio de negativos = " + promedioNegativos.toFixed(1) + "<br>");
 	document.write("Diferencia = " + diferencia); 
 }
