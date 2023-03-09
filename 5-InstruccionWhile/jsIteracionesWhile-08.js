@@ -29,5 +29,4 @@ function mostrar()
 
 	document.getElementById("txtIdSuma").value = positivos; 
 	document.getElementById("txtIdProducto").value = negativos;
-
 } 
