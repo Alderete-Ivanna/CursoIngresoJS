@@ -12,7 +12,7 @@ a) El nombre del usuario de tipo “VIP” más joven.
 
 b) La cantidad total de descargas del día.
 
-c) Promedio total de descargas de los usuarios del tipo “REGISTRADO”.*/
+c) Promedio total de descargas de los usuarios del tipo “REGISTRADO”.
 
 let respuesta = 'si';
 let nombre;
@@ -89,6 +89,125 @@ while(respuesta == 'si'){
 }
 	
 	document.write("La cantidad total de descargas del día es : " + acumuladorDescargasDiarias + "<br>");
-	document.write("Promedio total de descargas de los usuarios del tipo “registrado” es: " + promedioDescargas);
-	
+	document.write("Promedio total de descargas de los usuarios del tipo “registrado” es: " + promedioDescargas);*/
+
+
+
+
+
+
+
+ 	/*Vacaciones en Familia" 
+	Nos ingresan una cantidad indeterminada de estadías de vacaciones, 
+	validando los datos ingresados:
+	nombre del pasajero titular, 
+	destino( “Brasil”, “Caribe” o “Europa”), 
+	temporada(“alta”,”baja”,“media”),
+	cantidad de pasajeros que viajan.
+	Informar:
+	a)El destino más elegido.
+	b)El nombre del pasajero titular que lleva menos pasajeros.
+	c)El promedio de personas, que viajan en temporada alta.
+	d)El total de personas que viajaron a Europa.*/
+
+	let respuesta = 'si';
+	let mensaje;
+	let nombre;
+	let nombreCantidadMenos;
+	let destino;
+	let temporada;
+	let cantidadPasajeros;
+	let cantidadMenosPasajeros;
+	let promedio;
+
+	let banderaMenosPasajeros = true;
+
+	let contadorBrasil = 0;
+	let contadorCaribe = 0;
+	let contadorEuropa = 0;
+	let contadorTemporadaAlta = 0;
+	let acumuladorTemporadaAlta = 0;
+
+		while(respuesta == 'si'){
+
+			nombre = prompt("ingrese el nombre :");
+			while (!isNaN(nombre)){
+				nombre = prompt("ingrese el nombre :");
+			}
+
+			destino = prompt("ingrese destino, brasil, caribe, europa");
+			while(destino != "brasil" & destino != "caribe" & destino != "europa"){
+				destino = prompt("ingrese destino, brasil, caribe, europa");
+			}
+
+			temporada = prompt("ingrese temporada entre, alta, baja o media");
+			while(temporada != "alta" & temporada != "baja" & temporada != "media"){
+				temporada = prompt("ingrese temporada entre, alta, baja o media");
+			}
+
+			cantidadPasajeros = parseInt(prompt("ingrese cantidad de pasajeros entre 2 y 14"));
+			while(cantidadPasajeros > 14 || cantidadPasajeros < 2){
+				cantidadPasajeros = parseInt(prompt("ingrese cantidad de pasajeros entre 2 y 14"));
+			}
+
+			
+			//b)El nombre del pasajero titular que lleva menos pasajeros. 
+
+			if(banderaMenosPasajeros == true || cantidadMenosPasajeros > cantidadPasajeros){
+				cantidadMenosPasajeros = cantidadPasajeros;
+				nombreCantidadMenos = nombre;
+				banderaMenosPasajeros = false;
+			}
+
+			switch (destino){
+
+				case "brasil": 
+					contadorBrasil++;
+					break;
+		
+				case "caribe":
+					contadorCaribe++;
+					break;
+
+				case "europa":
+					contadorEuropa++;
+					break;
+			}
+
+			//c)El promedio de personas, que viajan en temporada alta.
+			if(temporada == "alta"){
+				acumuladorTemporadaAlta = acumuladorTemporadaAlta + cantidadPasajeros;
+				contadorTemporadaAlta++;
+			} 
+
+			respuesta=prompt("desea continuar? ponga si o no");
+		}//fin del while.
+		
+		//a)El destino más elegido.
+		if(contadorBrasil>contadorCaribe && contadorBrasil>contadorEuropa){
+			mensaje = "Brasil";
+		}
+		else if(contadorCaribe>contadorEuropa)
+		{
+				mensaje = "Caribe";
+		}
+		else{
+				mensaje = "Europa";
+		}
+
+		promedio = acumuladorTemporadaAlta/contadorTemporadaAlta;
+
+
+	document.write("El destino más elegido es: " + mensaje + "<br>");
+    document.write("El nombre del pasajero titular que lleva menos pasajeros es: " + nombreCantidadMenos + "<br>");
+
+	if(contadorTemporadaAlta != 0){
+		document.write("El promedio de personas, que viajan en temporada alta es: " + promedio + "<br>");
+	}
+	else{
+		document.write("No se registro viajes en temporada alta");
+	}
+    
+    document.write("El total de personas que viajaron a Europa: " + contadorEuropa + "<br>");
+ 
 }
